@@ -1,9 +1,14 @@
 import React from 'react'
-import classes from './productdetails.module.css'
+import classes from "../ProductDetail/ProductDetails.module.css"
+import Layout from '../../Components/LayOut/Layout'
 
 function ProductDetail() {
   return (
-    <div>ProductDetail</div>
+    <Layout>
+<div>ProductDetail</div>
+    </Layout>
+
+    
   )
 }
 

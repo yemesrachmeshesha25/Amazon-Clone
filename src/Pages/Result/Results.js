@@ -1,9 +1,13 @@
 import React from 'react'
 import classes from './result.module.css'
+import Layout from '../../Components/LayOut/Layout'
 
 function Results() {
   return (
-    <div>Results</div>
+    <Layout>
+      <div>Results</div>
+    </Layout>
+    
   )
 }
 

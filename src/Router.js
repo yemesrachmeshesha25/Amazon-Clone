@@ -10,14 +10,12 @@ function Routing() {
 return (
     <Router>
         <Routes>
-            <Route>
-                <Routes path="/" element={<Landing/>}/>
-                <Routes path="/auth" element={<SignIn/>}/>
-                <Routes path="/payments" element={<Payment/>}/>
-                <Routes path="/orders" element={<Orders/>}/>
-                <Routes path="/cart" element={<Cart/>}/>
-
-            </Route>
+            
+            <Route path="/" element={<Landing/>}/>
+            <Route path="/auth" element={<SignIn/>}/>
+            <Route path="/payments" element={<Payment/>}/>
+            <Route path="/orders" element={<Orders/>}/>
+            <Route path="/cart" element={<Cart/>}/>
         </Routes>
     </Router>
   )
