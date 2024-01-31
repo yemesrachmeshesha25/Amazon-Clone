@@ -3,6 +3,7 @@
  import { SlLocationPin } from "react-icons/sl";
  import { BsSearch } from "react-icons/bs";
  import { BiCart } from "react-icons/bi";
+ import LowerHeader from './Header/LowerHeader';
 const Header = () => {
 return (
         <>
@@ -30,13 +31,13 @@ return (
                 <select name="" id="">
                     <option value="">All</option>
                 </select>
-                <input type="text" />
+                <input type="text" placeholder='Search Amazon'/>
                 <BsSearch size={25} />
                 </div>
                 {/* other section */}
                 <div className={classes.order_container}>
                     <a href="" className={classes.language}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Flag_of_the_United_States_%281896%E2%80%931908%29.svg/640px-Flag_of_the_United_States_%281896%E2%80%931908%29.svg.png" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Ethiopia_%28Blank%29.svg/1280px-Flag_of_Ethiopia_%28Blank%29.svg.png" alt="" />
                     <select name="" id="">
                     <option value="">EN</option>
                     </select>
@@ -57,6 +58,7 @@ return (
                 </div>
             </div>
             </section>
+            <LowerHeader/>
         </>
         );
     };
