@@ -3,7 +3,7 @@ export const catagoryInfos =[
         title: "Electronics",
         name: "electronics",
         imgLink:
-        "https://m.media-amazon.com/images/I/619wOkaIn2L.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+        "https://m.media-amazon.com/images/I/619wOkaIn2L.__AC_SX300_SY300_QL70_FMweb_.jpg",
     },
     {
         title: "Discover fashion trends",
