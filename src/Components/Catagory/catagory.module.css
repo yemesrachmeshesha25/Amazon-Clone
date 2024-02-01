@@ -1,13 +1,13 @@
 .catagory {
     height: 350px;
-    width: 350px;
+    width: 250px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .catagory img {
     width: 100%;
     object-fit: contain;
-    max-height: 250px;
+    max-height: 220px;
     padding: 0px 10px;
 }
 .catagory a {
