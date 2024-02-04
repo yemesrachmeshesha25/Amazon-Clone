@@ -13,6 +13,7 @@ function Results() {
   const {categoryName} =useParams()
 
  useEffect(() =>{
+  setIsLoading(true);
  axios.get(`${productUrl}/products/category/${categoryName}`)
  .then((res)=>{
   setResults(res.data);
@@ -20,8 +21,9 @@ function Results() {
 })
   .catch ((err)=>{
     console.log(err)
-  })
-  }, [])
+    setIsLoading(false);
+  });
+  }, [categoryName]);
  
   return (
     <Layout>

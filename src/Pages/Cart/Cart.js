@@ -19,7 +19,7 @@ function Cart() {
                   <h3>Your Shopping Basket</h3>
                   <hr />
                   {
-                      basket?.length==0?(<p>Opps ! No item in your cart</p>):(basket?.map((item,i)=>{
+                      basket?.length !==0?(<p>Opps ! No item in your cart</p>):(basket?.map((item,i)=>{
                           return <ProductCard
                           key={i}
                           product={item}
