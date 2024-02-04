@@ -1,42 +1,37 @@
-// import React from "react";
-// import "./Product.css";
-// import { useStateValue } from "./StateProvider";
-// const Product = ({ id, title, price, image, rating }) => {
-//     const [{ basket }, dispatch] = useStateValue();
-//     const addToBasket = () => {
-//         dispatch({
-//             type: 'ADD_TO_BASKET',
-//             item: {
-//                 id: id,
-//                 title: title,
-//                 image: image,
-//                 price: price,
-//                 rating: rating
-//             }
-//         });
-//     }
-// 	return (
-// 		<div className="product">
-// 			<div className="product__info">
-// 				<p>{title}</p>
-// 				<p className="product__price">
-// 					<small>$</small>
-// 					<strong>{price}</strong>
-// 				</p>
-//                 <div className="product__rating">
-//                     {Array(rating)
-//                         .fill()
-//                         .map(()=>(<p>🌟</p>))
-//                     }                    
-// 				</div>
-// 			</div>
-// 			<img
-// 				src={image}
-// 				alt="image"
-// 			/>
-// 			<button onClick={addToBasket}>Add to Basket</button>
-// 		</div>
-// 	);
-// };
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import classes from './products.module.css'
+import Loader from "../Loader/Loader"
+import ProductCard from "./ProductCard";
+function Product() {
+    const [products, setProducts] = useState()
+   const [isLoading, setIsLoading] = useState(false)
+    useEffect(() => {
+      axios.get('https://fakestoreapi.com/products')
+      .then((res)=>{
+        setProducts(res.data)
+        setIsLoading(false)
+      }).catch((err)=>{
+        console.log(err)
+        setIsLoading(false)
+      })
+    }, [])
+    
+  return (
 
-// export default Product;
+  <>
+  {
+    isLoading?(<Loader/>) : ( <section className={classes.products_container}>
+      {
+          products?.map((singleProduct)=>{
+            return  <ProductCard renderAdd={true} product={singleProduct} key={singleProduct.id}/>
+                })
+      }
+    </section>)
+  }
+  </>
+
+  )
+}
+
+export default Product;
