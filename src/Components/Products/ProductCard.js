@@ -4,13 +4,17 @@ import CurrencyFormat from '../CurrencyFormat/CurrencyFormat'
 import classes from './products.module.css'
 import {Link} from 'react-router-dom'
 import { DataContext } from '../DataProvider/DataProvide'
+import {Type} from '../../Utility/action.type'
+
 
 function ProductCard({product,flex,renderDesc,renderAdd}) {
     const { image, title, id, rating, price, description } = product;
     const [state,dispatch]=useContext(DataContext)
+
+    // console.log(state)
     const addToCart = () =>{
         dispatch({
-            type:TypeError.ADD_TO_BASKET,
+            type:Type.ADD_TO_BASKET,
             item:{
                 image, title, id, rating, price,description
             }

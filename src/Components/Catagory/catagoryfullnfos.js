@@ -15,7 +15,7 @@ export const catagoryInfos =[
         title: "Men's Clothing",
         name: "men's clothing",
         imgLink:
-        "https://m.media-amazon.com/images/I/41jHf7bjmXL._AC_SX679_.jpg"
+        "https://m.media-amazon.com/images/I/51LWeqBz9xL._AC_SL1000_.jpg"
     },
     {
         title: "Jewelery",
