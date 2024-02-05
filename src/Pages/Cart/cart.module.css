@@ -45,7 +45,7 @@
 .subtotal {
     padding: 20px;
     min-width: 300px;
-    height: 120px;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +56,7 @@
 }
 .subtotal a {
     text-align: center;
-    width: 200px;
+    width: 100%;
     border: none;
     background-color: var(--primary-color);
     border-radius: 5px;

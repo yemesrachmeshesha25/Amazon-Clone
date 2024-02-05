@@ -51,8 +51,6 @@
     margin: 0 auto;
   }
 
-  
-
   .product__flexed {
     box-shadow: none;
     height: auto;
@@ -68,7 +66,6 @@
     position: static;
     width: 150px;
     margin-right: 40px;
-  
   }
   .product__flexed{
     height: 50vh;
@@ -77,8 +74,6 @@
     width: 300px !important;
     height: auto;
   }
-  
-  
   @media screen and (max-width: 768px) {
     .product__flexed {
       display: flex;

@@ -33,7 +33,7 @@ function Cart() {
             <h3>Your Shopping Basket</h3>
             <hr />
                 {
-                    basket?.length!==0?(<p>Opps ! No item in your cart</p>):(basket?.map((item,i)=>{
+                    basket?.length==0?(<p>Opps ! No item in your cart</p>):(basket?.map((item,i)=>{
             return <section className={classes.cart_product}>
             <ProductCard
                 key={i}
@@ -62,18 +62,17 @@ function Cart() {
         <div calssName={classes.subtotal}>
         <div>
             <p>Subtotal ({basket?.length} items)</p>
-                <CurrencyFormat amount={total}/>
+            <CurrencyFormat amount={total}/>
         </div>
         <span>
             <input type="checkbox" />
-                <small>This order contains a gift</small>
+            <small>This order contains a gift</small>
         </span>
         <Link to="/payments">Continue to checkout</Link>
         </div>
         )}
         
-            
-    </section>
+ </section>
     </LayOut>
 )
 }
