@@ -15,10 +15,6 @@ const Auth = () => {
   const [error, setError] = useState("");
   const [{ user }, dispatch] = useContext(DataContext);
 
-  // console.log(user);
-
-  // console.log(email, password);
-
   const authHandler = async (e) => {
     e.preventDefault();
     console.log(e.target.name);
@@ -98,9 +94,6 @@ const Auth = () => {
 
         {/* Create acount btn */}
         <button
-          type="submit"
-          onClick={authHandler}
-          name="signup"
           className={classes.login_registerButton}>
           Create your Amazon Account
         </button>
