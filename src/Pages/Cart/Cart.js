@@ -59,7 +59,7 @@ function Cart() {
             </div>
 
         {basket?.length !==0&&(
-        <div calssName={classes.subtotal}>
+        <div className={classes.subtotal}>
         <div>
             <p>Subtotal ({basket?.length} items)</p>
             <CurrencyFormat amount={total}/>
