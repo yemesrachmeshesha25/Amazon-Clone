@@ -59,7 +59,7 @@ const Auth = () => {
         <h1>Sign-In</h1>
         <form action="">
           <div>
-            <label htmlFor="email">E-mail</label>
+            <label htmlFor="email">Email</label>
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -94,7 +94,11 @@ const Auth = () => {
 
         {/* Create acount btn */}
         <button
+          type="submit"
+          name="signup"
+          onClick={authHandler}
           className={classes.login_registerButton}>
+
           Create your Amazon Account
         </button>
       </div>
