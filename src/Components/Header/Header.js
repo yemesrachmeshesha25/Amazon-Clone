@@ -6,7 +6,7 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from "./LowerHeader";
 import { DataContext } from "../DataProvider/DataProvide";
-
+import {auth} from '../../Utility/firebase';
 
 const Header = () => {
   const [{ user, basket},dispatch]=useContext(DataContext)
@@ -41,7 +41,7 @@ const Header = () => {
               <option value="">All</option>
             </select>
             <input type="text" placeholder="Search Amazon" />
-            <BsSearch size={35} />
+            <BsSearch size={38} />
           </div>
           {/* other section */}
           <div className={classes.order_container}>
@@ -55,21 +55,21 @@ const Header = () => {
               </select>
             </Link>
 
-            <Link to="/auth" className={classes.signin_button}>
+            <Link to={!user && "/auth"} className={classes.signin_button}>
               <div>  
-{
-  user ?(
-  <p>Hello {user?.email?.split("@")[0]}</p>
-  ):(
-    <p>Hello,</p>
-  )
-}
-
-              </div>
-               <p>Sign In</p>
-              <span>Account & List</span>
+              {user ? (
+    <>
+    <p>Hello {user?.email?.split("@")[0]}</p>
+    <span onClick={()=>auth.signOut()}>Sign Out</span>
+    </>
+  ) : (
+    <>
+    <p>Hello, Sign in</p>
+    <span>Account & List</span>
+    </>
+      )}
+      </div>
             </Link>
-
             <Link to="/orders" className={classes.order_button}>
               <p>returns</p>
               <span>& orders</span>

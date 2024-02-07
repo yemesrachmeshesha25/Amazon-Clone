@@ -120,9 +120,9 @@ function Auth() {
           onClick={authHandler}
           className={classes.login_registerButton}>
 
-        {loading. signUp ? (
+        {loading.signUp ? (
               <ClipLoader color="#000" size={15}></ClipLoader>
-            ):(
+            ) : (
             "Create your Amazon Account"
             )}
           
