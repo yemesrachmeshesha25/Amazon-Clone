@@ -16,18 +16,19 @@ function Auth() {
   const [error, setError] = useState("");
   const [loading, setLoading] =useState({
     signIn:false,
-    signUp:false
+    signUp:false,
 
-})
+});
   const [{ user }, dispatch] = useContext(DataContext);
   const navigate = useNavigate()
+
   const authHandler = async (e) => {
     e.preventDefault();
     console.log(e.target.name);
-    if (e.target.value == "signin") {
+    if (e.target.name == "signin") {
       //firebase auth
 
-      setLoading({...loading, signIn:true})
+      setLoading({...loading, signIn: true})
       signInWithEmailAndPassword(auth, email, password)
         .then((userInfo) => {
           dispatch({
@@ -136,3 +137,6 @@ function Auth() {
 };
 
 export default Auth;
+
+
+
