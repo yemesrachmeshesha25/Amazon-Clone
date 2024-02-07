@@ -102,6 +102,10 @@
 .language img {
     width: 40%;
 }
+.signin_button,
+.order_button{
+    padding: 6px;
+}
 .cart {
     position: relative;
 }
