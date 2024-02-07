@@ -41,7 +41,7 @@ const Header = () => {
               <option value="">All</option>
             </select>
             <input type="text" placeholder="Search Amazon" />
-            <BsSearch size={25} />
+            <BsSearch size={35} />
           </div>
           {/* other section */}
           <div className={classes.order_container}>
@@ -56,6 +56,16 @@ const Header = () => {
             </Link>
 
             <Link to="/auth" className={classes.signin_button}>
+              <div>  
+{
+  user ?(
+  <p>Hello {user?.email?.split("@")[0]}</p>
+  ):(
+    <p>Hello,</p>
+  )
+}
+
+              </div>
                <p>Sign In</p>
               <span>Account & List</span>
             </Link>
