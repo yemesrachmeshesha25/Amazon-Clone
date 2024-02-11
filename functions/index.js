@@ -23,9 +23,7 @@ app.post("/payment/create", async(req,res)=>{
             amount: total,
             currency: "usd",
         });
-        console.log(paymentIntent);
-       
-        res.status(201).json
+       res.status(201).json
         ({
             clientSecret: paymentIntent.clientSecret,
         });
