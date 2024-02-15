@@ -25,8 +25,8 @@ return (
         <Route path='/payments' 
                 element={
                   <ProtectedRoute
-                  msg={"you must log in to pay"}>
-                      redirect={"/payments"}
+                  msg={"You must log in to pay"}
+                      redirect={"/payments"}>
 
                 <Elements stripe={stripePromise}>
                 <Payment /> 
@@ -37,8 +37,8 @@ return (
         <Route path='/orders'
          element={
         <ProtectedRoute
-        msg={"you must log in to access your orders"}>
-            redirect={"/orders"}
+        msg={"You must log in to access your orders"}
+            redirect={"/orders"}>
         
         <Orders />
         </ProtectedRoute>

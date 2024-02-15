@@ -14,7 +14,7 @@ import { Type } from '../../Utility/action.type';
 function Payment() {
 
   const [{user, basket}, dispatch] = useContext(DataContext);
- console.log(user)
+//  console.log(user)
   
  const totalItem =basket?.reduce((amount,item) => {
     return item.amount + amount;
@@ -48,8 +48,8 @@ const response = await axiosInstance({
   url: `/payment/create?total=${total * 100}`,
 });
 
-// console.log(response.data)
-const clientSecret = response.data?.clientSecret;
+console.log(response.data)
+const clientSecret = response?.data?.clientSecret;
 // 2. client side (react side confirmation)
 const { paymentIntent} = await stripe.confirmCardPayment(clientSecret, {
   payment_method: {
@@ -57,10 +57,11 @@ const { paymentIntent} = await stripe.confirmCardPayment(clientSecret, {
   },
 });
 
-// console.log(confirmation)
+console.log(paymentIntent)
 
  // 3. after the confirmation --> order firestore database save, clear basket
-
+try {
+  
 await db
 .collection("users")
 .doc(user.uid)
@@ -71,6 +72,10 @@ await db
   amount: paymentIntent.amount,
   created: paymentIntent.created,
 });
+console.log("you post successfully to your database")
+} catch (error) {
+  console.log("this is your errorrrr", error)
+}
 // empty the basket
 dispatch({ type: Type.EMPTY_BASKET });
 

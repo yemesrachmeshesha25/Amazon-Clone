@@ -16,11 +16,11 @@ db.collection("users")
 .collection("orders")
 .orderBy ("created","desc")
 .onSnapshot((snapshot)=>{
-  console.log(snapshot);
+  // console.log(snapshot);
   setOrders(
     snapshot.docs.map((doc)=>({
       id:doc.id,
-      data:doc.data()
+      data:doc.data(),
     }))
   );
 });
@@ -33,8 +33,8 @@ setOrders ([])
       <section className={classes.container}>
         <div className={classes.orders_container}>
           <h2>Your Orders</h2>
-          {orders?.length == 0 && (
-          <div style={{padding: "20px"}}>You don't have orders yet.</div>)}
+          {orders?.length == 0 && 
+          <div style={{padding: "20px"}}>You don't have orders yet.</div>}
         {/* ordered item */}
         <div>
           {orders?.map((eachOrder, i) => {
@@ -42,7 +42,7 @@ setOrders ([])
               <div key={i}>
                 <hr />
               <p>Order ID: {eachOrder?.id}</p>
-              {eachOrder?.data?.basket?.map((order) => (
+              {eachOrder?.data.basket.map(order=> (
                 <ProductCard flex={true} product={order} key={order.id} />
                 ))}
               </div>
